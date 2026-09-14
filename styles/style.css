@@ -1,69 +1,56 @@
 /* место для вашего кода */
 .cover {
-  
+  background-image: url(../images/cover.jpg);
+  position: relative;
+  padding: ;
+  /* центрирую фоновое изображение */
+  background-position: center;
+  background-size: cover;
 }
 
-.cover__img {
-
-
+.overlay {
+  position: absolute;
 }
 
-.cover__title {
-
-
+.cover__title span {
+  /* каждый span - отдельная строка */
+  display: block;
 }
 
 .description {
 
-
 }
 
 .lots {
-
-
+  margin: ;
+  padding: ;
 }
 
 .lots__title {
 
+}
+
+.card {
 
 }
 
-.card-lot-01 {
-
-
+.card_lot-1 {
+  background-image: url(../images/card-lot-01.jpg);
 }
 
-.lot__01 {
-
-
+.card_lot-2 {
+  background-image: url(../images/card-lot-02.jpg);
 }
 
-.card-lot-02 {
-
-
-}
-
-.lot__02 {
-
-
-}
-
-.card-lot-03 {
-
-
-}
-
-.lot__03 {
-
-
+.card_lot-3 {
+  background-image: url(../images/card-lot-03.jpg);
 }
 
 .about {
-
-
+  margin: ;
+  padding: ;
 }
 
 .about__title {
-
-  
+ 
 }
