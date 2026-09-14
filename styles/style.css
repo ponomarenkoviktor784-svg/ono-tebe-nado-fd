@@ -1,56 +1,178 @@
-/* место для вашего кода */
+.header {
+  height: 293px;
+  display: grid;
+
+  /*распределил контент на 3 колонки*/
+
+  grid-template-columns: 1fr auto 1fr; 
+  align-items: center;
+  padding: 0 50px; 
+}
+
+.header__logo {
+  width: 129px;
+}
+
+.header__contacts {
+  width: 236px; /*ширина блока контактов по макету*/
+  display: block; 
+  justify-self: end;
+}
+
 .cover {
+  height: 757px;
   background-image: url(../images/cover.jpg);
   position: relative;
-  padding: ;
-  /* центрирую фоновое изображение */
+
+  /*центрирую фоновое изображение*/
+
   background-position: center;
   background-size: cover;
 }
 
 .overlay {
   position: absolute;
+  inset: 0;
+  background: rgb(0 0 0 / 0.6);
+  z-index: 1;
 }
 
+
 .cover__title span {
-  /* каждый span - отдельная строка */
+
+  /*каждый span - отдельная строка*/
+
   display: block;
+  position: relative; /*добавил что бы заработал z-index*/
+  z-index: 2; /*поднял уровень тексту, так как оверлей затемнил его*/
+  font-size: 100px;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 30%;
+  line-height: 115%;
+}
+
+.cover__title-left {
+  padding-left: 50px;
+}
+
+.cover__title-center {
+  text-align: center;
+  padding-left: 45px;
+  padding-top: 20px;
+}
+
+.cover__title-right {
+  text-align: end;
+  padding-top: 20px;
+  padding-right: 20px;
 }
 
 .description {
-
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 90%;
+  color: #fff;
 }
 
 .lots {
-  margin: ;
-  padding: ;
+  height: 723px;
+  margin-top: 180px;
+  padding: 0 24px;
 }
 
 .lots__title {
-
+  font-size: 40px;
+  padding-left: 40px;
 }
 
 .card {
-
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
 }
 
-.card_lot-1 {
+.card__lot-1 {
   background-image: url(../images/card-lot-01.jpg);
+  
 }
 
-.card_lot-2 {
+.card__lot-2 {
   background-image: url(../images/card-lot-02.jpg);
+  
 }
 
-.card_lot-3 {
+.card__lot-3 {
   background-image: url(../images/card-lot-03.jpg);
+
 }
 
 .about {
-  margin: ;
-  padding: ;
+  height: 595px;
+  margin: 120px;
+  padding: 0 24px;
+
 }
 
 .about__title {
  
+}
+
+.about__logo {
+
+  /*делаю черный круг*/
+
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background-color: #000;
+
+  /*центрирую логотип в круге*/
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*размеры логотипа из макета*/
+
+.about__logo img {
+  width: 142px;
+  height: auto;
+}
+
+.about__text {
+  width: 693px;
+}
+
+.footer {
+  height: 180px;
+  display: grid;
+  /*распределил контент на 3 колонки*/
+  grid-template-columns: 1fr auto 1fr; 
+  align-items: center;
+  padding: 0 50px; 
+}
+
+/*обращаюсь к ссылкам*/
+
+.footer__contacts a {
+  display: block; 
+}
+
+/*внутри грид-контейнера создаю флекс-контейнерs для
+удобства управления*/
+
+.footer__nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__logo {
+  display: flex;
+  gap: 16px;
 }
