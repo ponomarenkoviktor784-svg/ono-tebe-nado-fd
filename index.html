@@ -11,10 +11,22 @@
   </head>
   <body>
     <header class="header">
-      <nav>
-        <a>главная</a>
-        <a href="#lots">посмотреть лоты</a>
-        <a href="#about">об аукционе</a>
+      <nav class="header__menu">
+        
+        <!--через ul создаю список для оформления
+        "кружков" между ссылками-->
+
+        <ul class="header__links-list">
+          <li class="header__links-list-item header__links-list-item_no-bullit">
+            <a>главная</a>
+          </li>
+          <li class="header__links-list-item">
+            <a href="#lots">посмотреть лоты</a>
+          </li>
+          <li class="header__links-list-item">
+            <a href="#about">об аукционе</a>
+          </li>
+        </ul>  
       </nav>
       <a class="header__logo">
         <img src="images/logo-black.svg" alt="Оно тебе надо">
@@ -36,7 +48,7 @@
           <!--разделил заголовок-->
           <span class="cover__title-left">ОНО</span>
           <span class="cover__title-center">ТЕБЕ</span>
-          <span class="cover__tittle-right">НАДО</span>
+          <span class="cover__title-right">НАДО</span>
         </h1>
         <div class="description">
           <p>
@@ -84,7 +96,7 @@
             </a>
           </li>
           <li>
-            <a></a>
+            <a>
             <article class="card card__lot-3">
               <h3>
                 Картина, которую повторит даже 5-летний сын маминой подруги
@@ -110,8 +122,10 @@
           </a>
         </div>
         <div class="about__column"></div>
+
         <!--Заголовок и текст-->
-        <h4 class="about__title">Об аукционе</h4>
+        <!--Заголовок отдельной секции, поэтому h2-->
+        <h2 class="about__title">Об аукционе</h2>
         <div class="about__text">
           <p>
             Здесь вы не встретите очередное пафосное собрание невероятно дорогого антиквариата. 
