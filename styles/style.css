@@ -1,73 +1,80 @@
 .header {
   height: 293px;
   display: grid;
-
   /*распределил контент на 3 колонки*/
-
   grid-template-columns: 1fr min-content 1fr; 
   align-items: center;
-  padding: 0 50px;
+  padding: 92px 50px 96px;
 }
 
 .header__links-list {
   display: flex;
-  gap: 25px;
-  list-style: circle;
+  gap: 26px;
+  font-size: 18px;
+  font-weight: 400;
 }
 
-/*.header__links-list-item {
+.header__links-list-item {
   list-style: circle;
-}*/
+}
 
 .header__links-list-item_no-bullit {
   list-style: none;
 }
 
 .header__logo {
-  width: 129px;
+  width: 132px;
 }
 
 .header__contacts {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   justify-self: end;
+  max-width: 238px;
+  font-style: normal;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
 }
 
 .cover {
-  height: 757px;
+  min-height: 757px;
   background-image: url(../images/cover.jpg);
   position: relative;
-
-  /*центрирую фоновое изображение*/
-
+  padding: 146px 50px 0;
+  /*закрепил по центру фоновое изображение*/
   background-position: center;
   background-size: cover;
 }
 
-.overlay {
+.cover__overlay {
   position: absolute;
   inset: 0;
   background: rgb(0 0 0 / 0.6);
   z-index: 1;
 }
 
-
-.cover__title span {
-
-  /*каждый span - отдельная строка*/
-
-  display: block;
-  position: relative; /*добавил что бы заработал z-index*/
-  z-index: 2; /*поднял уровень тексту, так как оверлей затемнил его*/
+/*общие свойства*/
+.cover__title {
+  position: relative;
+  z-index: 2;
   font-size: 100px;
   color: #fff;
   font-weight: 700;
-  letter-spacing: 30%;
   line-height: 115%;
+  letter-spacing: 30px;
+  text-transform: uppercase;
+}
+
+/*выравнивание*/
+.cover__title span {
+  display: block;
+  margin-right: -30px;
 }
 
 .cover__title-left {
-  padding-left: 50px;
+  padding-left: 0;
 }
 
 .cover__title-center {
@@ -79,18 +86,38 @@
 .cover__title-right {
   text-align: end;
   padding-top: 20px;
-  padding-right: 20px;
+  padding-right: 0;
 }
 
-.description {
+.cover__description {
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 22px;
   font-weight: 400;
   line-height: 28px;
-  letter-spacing: 90%;
+  word-spacing: 18px; /*подгонял через perfectpixel*/
   color: #fff;
+  left: 50px;
+  right: 50px;
+  bottom: 50px;
+  /*поднимаю уровень*/
+  position: absolute;
+  z-index: 2;
+}
+
+.bet-button {
+ width: 256px;
+ height: 50px;
+ white-space: nowrap; /*убрал перенос текста в кнопке*/
+/*сбросил стандартный стиль*/
+  border: 1px solid #fff;
+  padding: 12px 32px;
+  background: transparent;
+  color: #fff;
+/*размер из макета*/
+  font-size: 22px;
+  font-weight: 400;
 }
 
 .lots {
@@ -104,63 +131,150 @@
   padding-left: 40px;
 }
 
-.card {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+/*при переполнении - карточки переносятся на новую строку,
+и расстояние между ними сохраняется*/
+.lots__list {
+  display: flex;
+  flex-wrap: wrap;
   gap: 25px;
+  list-style: none; /*убрал стандартные маркеры*/
+  margin-top: 27px;
 }
 
-.card__lot-1 {
+.lots__list-item {
+  width: 334px;
+  min-height: 596px;
+}
+
+.lots__card-link {
+  display: block;
+  height: 100%;
+  text-decoration: none;
+}
+
+/*оверлей как в блоке cover*/
+.card__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgb(0 0 0 / 0.6);
+  z-index: 1;
+}
+
+.lots__card-title {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 120%;
+  text-transform: uppercase;
+  text-decoration: underline;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+  padding: 48px 40px 0; /*отступы из макета*/
+}
+
+.lots__card-text {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 120%;
+  color:#fff;
+  position: relative;
+  z-index: 2;
+  padding: 0 40px 48px; /*отступы из макета*/
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.card__lot-film {
   background-image: url(../images/card-lot-01.jpg);
   
 }
 
-.card__lot-2 {
+.card__lot-book {
   background-image: url(../images/card-lot-02.jpg);
   
 }
 
-.card__lot-3 {
+.card__lot-picture {
   background-image: url(../images/card-lot-03.jpg);
 
 }
 
-.about {
-  height: 595px;
-  margin: 120px;
-  padding: 0 24px;
+.lots__link {
+  /*на уровне с lots__title*/
+  display: block;
+  margin-top: 27px;
+  margin-left: 40px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 120%;
+}
 
+.about {
+  /*секция делится на две колонки*/
+  /*1 - ширина карточки из lots;
+  2 - на ост. пространство*/
+  display: grid;
+  grid-template-columns: 334px 1fr;
+  height: 595px;
+  margin: 120px 24px;
+  padding: 0 24px;
+  gap: 26px;
+}
+
+.about__column {
+  display: flex;
+  justify-content: center;
+}
+
+.about__column_content {
+  /*выстроил заголовок и текст вертикально*/
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 100px;
 }
 
 .about__title {
- 
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 100%;
+  text-transform: uppercase;
 }
 
 .about__logo {
-
   /*делаю черный круг*/
-
   width: 240px;
   height: 240px;
   border-radius: 50%;
   background-color: #000;
-
   /*центрирую логотип в круге*/
-
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 /*размеры логотипа из макета*/
-
-.about__logo img {
+.about__logo-image {
   width: 142px;
   height: auto;
 }
 
 .about__text {
   width: 693px;
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
 }
 
 .footer {
@@ -173,14 +287,12 @@
 }
 
 /*обращаюсь к ссылкам*/
-
 .footer__contacts a {
   display: block; 
 }
 
 /*внутри грид-контейнера создаю флекс-контейнерs для
 удобства управления*/
-
 .footer__nav {
   display: flex;
   flex-direction: column;
