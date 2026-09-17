@@ -10,8 +10,7 @@
 .header__links-list {
   display: flex;
   gap: 26px;
-  font-size: 18px;
-  font-weight: 400;
+  font-size: 19px;
 }
 
 .header__links-list-item {
@@ -20,6 +19,7 @@
 
 .header__links-list-item_no-bullit {
   list-style: none;
+  text-decoration: none;
 }
 
 .header__logo {
@@ -34,7 +34,6 @@
   max-width: 238px;
   font-style: normal;
   font-size: 18px;
-  font-weight: 400;
   line-height: 24px;
 }
 
@@ -42,13 +41,13 @@
   min-height: 757px;
   background-image: url(../images/cover.jpg);
   position: relative;
-  padding: 146px 50px 0;
+  padding: 146px 50px 50px;
   /*закрепил по центру фоновое изображение*/
   background-position: center;
   background-size: cover;
 }
 
-.cover__overlay {
+.overlay {
   position: absolute;
   inset: 0;
   background: rgb(0 0 0 / 0.6);
@@ -62,42 +61,42 @@
   font-size: 100px;
   color: #fff;
   font-weight: 700;
-  line-height: 115%;
-  letter-spacing: 30px;
+  line-height: 128%;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
 }
 
 /*выравнивание*/
-.cover__title span {
+.aligned-text {
   display: block;
-  margin-right: -30px;
 }
 
-.cover__title-left {
-  padding-left: 0;
+.aligned-text_left {
+  text-align: left;
+  padding-top: 15px; /*подогнал через DevTools*/
 }
 
-.cover__title-center {
+.aligned-text_center {
   text-align: center;
-  padding-left: 45px;
-  padding-top: 20px;
+  /*подогнал через DevTools*/
+  padding-top: 9px;
+  padding-left: 28px;
 }
 
-.cover__title-right {
-  text-align: end;
-  padding-top: 20px;
-  padding-right: 0;
+.aligned-text_right {
+  text-align: right;
+  /*подогнал через DevTools*/
+  padding-top: 3px;
+}
+
+.no-letter-spacing {
+  letter-spacing: 0;
 }
 
 .cover__description {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 22px;
-  font-weight: 400;
-  line-height: 28px;
-  word-spacing: 18px; /*подгонял через perfectpixel*/
-  color: #fff;
   left: 50px;
   right: 50px;
   bottom: 50px;
@@ -106,9 +105,18 @@
   z-index: 2;
 }
 
+.cover__description-text {
+  text-transform: uppercase;
+  font-size: 22px;
+  line-height: 28px;
+  word-spacing: 18px; /*подгонял через perfectpixel*/
+  color: #fff;
+  padding-top: 5px; /*подогнал через DevTools*/
+}
+
 .bet-button {
- width: 256px;
- height: 50px;
+ width: 257px;
+ height: 48px;
  white-space: nowrap; /*убрал перенос текста в кнопке*/
 /*сбросил стандартный стиль*/
   border: 1px solid #fff;
@@ -117,7 +125,7 @@
   color: #fff;
 /*размер из макета*/
   font-size: 22px;
-  font-weight: 400;
+  text-transform: uppercase;
 }
 
 .lots {
@@ -129,6 +137,7 @@
 .lots__title {
   font-size: 40px;
   padding-left: 40px;
+  text-transform: uppercase;
 }
 
 /*при переполнении - карточки переносятся на новую строку,
@@ -162,24 +171,22 @@
 
 .lots__card-title {
   font-size: 22px;
-  font-weight: 700;
   line-height: 120%;
   text-transform: uppercase;
   text-decoration: underline;
   color: #fff;
   position: relative;
   z-index: 2;
-  padding: 48px 40px 0; /*отступы из макета*/
+  padding: 51px 40px 0; /*подогнал через DevTools*/
 }
 
 .lots__card-text {
   font-size: 20px;
-  font-weight: 400;
   line-height: 120%;
   color:#fff;
   position: relative;
   z-index: 2;
-  padding: 0 40px 48px; /*отступы из макета*/
+  padding: 0 39px 46px; /*подогнал через DevTools*/
 }
 
 .card {
@@ -210,11 +217,11 @@
 .lots__link {
   /*на уровне с lots__title*/
   display: block;
-  margin-top: 27px;
+  margin-top: 32px;
   margin-left: 40px;
   font-size: 20px;
-  font-weight: 400;
-  line-height: 120%;
+  text-decoration: underline;
+  text-underline-offset: 5px;
 }
 
 .about {
@@ -286,19 +293,19 @@
   padding: 0 50px; 
 }
 
-/*обращаюсь к ссылкам*/
-.footer__contacts a {
-  display: block; 
-}
-
 /*внутри грид-контейнера создаю флекс-контейнерs для
 удобства управления*/
-.footer__nav {
+.footer__menu {
   display: flex;
   flex-direction: column;
 }
 
-.footer__logo {
+/*обращаюсь к ссылкам*/
+.footer__menu-list-item {
+  display: block; 
+}
+
+.footer__social-list {
   display: flex;
   gap: 16px;
 }
