@@ -9,8 +9,9 @@
 
 .header__links-list {
   display: flex;
-  gap: 26px;
-  font-size: 19px;
+  /*через DevTools подобрал px*/
+  gap: 33px;
+  font-size: 18px;
 }
 
 .header__links-list-item {
@@ -19,6 +20,14 @@
 
 .header__links-list-item_no-bullit {
   list-style: none;
+}
+
+.header__link {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.header__link_active {
   text-decoration: none;
 }
 
@@ -26,15 +35,23 @@
   width: 132px;
 }
 
-.header__contacts {
+.address {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-self: end;
-  max-width: 238px;
   font-style: normal;
   font-size: 18px;
   line-height: 24px;
+}
+
+.header__address {
+  justify-self: end;
+  max-width: 240px;
+}
+
+.header__address-link {
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 .cover {
@@ -229,23 +246,26 @@
   /*1 - ширина карточки из lots;
   2 - на ост. пространство*/
   display: grid;
+  align-items: start;
   grid-template-columns: 334px 1fr;
   height: 595px;
   margin: 120px 24px;
-  padding: 0 24px;
   gap: 26px;
 }
 
 .about__column {
   display: flex;
   justify-content: center;
+  padding-top: 37px;/*отступ подогнал через DevTools*/
 }
 
+/*управление структуры 2 колонки*/
 .about__column_content {
-  /*выстроил заголовок и текст вертикально*/
+  display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 100px;
+  padding-top: 145px;
+  
 }
 
 .about__title {
@@ -253,6 +273,7 @@
   font-size: 40px;
   line-height: 100%;
   text-transform: uppercase;
+  margin-bottom: 93px;
 }
 
 .about__logo {
@@ -267,21 +288,20 @@
   align-items: center;
 }
 
-/*размеры логотипа из макета*/
 .about__logo-image {
-  width: 142px;
+  width: 149px;
   height: auto;
 }
 
 .about__text {
-  width: 693px;
-  grid-column: 2;
   display: flex;
   flex-direction: column;
   gap: 24px;
   font-weight: 400;
   font-size: 20px;
   line-height: 24px;
+  padding-top: 7px;
+  /*максимально приближенное к макету*/
 }
 
 .footer {
@@ -293,19 +313,43 @@
   padding: 0 50px; 
 }
 
-/*внутри грид-контейнера создаю флекс-контейнерs для
-удобства управления*/
-.footer__menu {
+.footer__menu-list {
   display: flex;
   flex-direction: column;
+  list-style: none;
+  text-align: center;
+  font-size: 18px;
+  padding-top: 10px;
 }
 
-/*обращаюсь к ссылкам*/
 .footer__menu-list-item {
-  display: block; 
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .footer__social-list {
   display: flex;
-  gap: 16px;
+  gap: 48px;
+  list-style: none;
+  justify-self: end;/*прижал правую колонку*/
+  padding-bottom: 7px;
+}
+
+.footer__menu-link {
+  text-decoration: underline;
+}
+
+.footer__menu-link_active {
+  text-decoration: none;
+}
+
+.footer__social-icon {
+  display: block;
+  width: 48px;
+  height: 48px;
+}
+
+.footer__address{
+  max-width: 240px;
+  padding-top: 42px;
 }
